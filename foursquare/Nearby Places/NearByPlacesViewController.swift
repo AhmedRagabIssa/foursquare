@@ -13,6 +13,7 @@ class NearByPlacesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let loader = LoaderView()
+    private var errorView: ErrorView?
 
     var viewModel: NearByPlacesViewModel = NearByPlacesViewModel()
     private let disposeBag = DisposeBag()
@@ -25,6 +26,7 @@ class NearByPlacesViewController: UIViewController {
         registerNib()
         viewModel.getNearByPlaces()
         bindTableView()
+        bindErrorState()
     }
 }
 
@@ -63,5 +65,34 @@ extension NearByPlacesViewController {
             case .hidden: self.hideLoader()
             }
         }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - error view
+extension NearByPlacesViewController {
+    private func showErrorView(with image: UIImage, message: String) {
+        errorView = ErrorView(frame: tableView.frame, errorImage: image, errorMessage: message)
+        if errorView != nil {
+            tableView.addSubview(errorView!)
+            errorView?.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 20).isActive = true
+            errorView?.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 20).isActive = true
+            errorView?.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+            errorView?.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        }
+    }
+
+    private func hideErrorView() {
+        errorView?.removeFromSuperview()
+        errorView = nil
+    }
+
+    private func bindErrorState() {
+        viewModel.errorState.asObservable().subscribe(onNext: {
+            [unowned self] state in
+            switch state {
+            case .hidden: self.hideErrorView()
+            case let .shown(image, message): self.showErrorView(with: image, message: message)
+            }
+            }).disposed(by: disposeBag)
     }
 }

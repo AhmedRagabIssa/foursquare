@@ -10,6 +10,7 @@
 		194CBD4A24E84857002D7C42 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */; };
 		194CBD4B24E84857002D7C42 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */; };
 		194CBD4E24E8512A002D7C42 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD4D24E8512A002D7C42 /* LoaderView.swift */; };
+		194CBD5124E85BD6002D7C42 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD5024E85BD6002D7C42 /* ErrorView.swift */; };
 		19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911A24E7F090001BED27 /* AppDelegate.swift */; };
 		19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */; };
 		19BE912224E7F090001BED27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912024E7F090001BED27 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		194CBD4D24E8512A002D7C42 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		194CBD5024E85BD6002D7C42 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		19BE911724E7F090001BED27 /* foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BE911A24E7F090001BED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				194CBD4D24E8512A002D7C42 /* LoaderView.swift */,
+				194CBD5024E85BD6002D7C42 /* ErrorView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				194CBD4E24E8512A002D7C42 /* LoaderView.swift in Sources */,
 				19BE913224E80471001BED27 /* RequestProtocol.swift in Sources */,
 				19BE913F24E81C46001BED27 /* Constants.swift in Sources */,
+				194CBD5124E85BD6002D7C42 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

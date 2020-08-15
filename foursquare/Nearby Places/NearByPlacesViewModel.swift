@@ -13,6 +13,7 @@ import RxCocoa
 class NearByPlacesViewModel {
 
     private(set) var loaderSate: BehaviorRelay<LoaderState> = BehaviorRelay(value: .shown)
+    private(set) var errorState: BehaviorRelay<ErrorState> = BehaviorRelay(value: .hidden)
     var venues: BehaviorRelay<[Venue]> = BehaviorRelay(value: [])
 
     func getNearByPlaces() {
@@ -26,8 +27,14 @@ class NearByPlacesViewModel {
             print("sucess")
             self.loaderSate.accept(.hidden)
             self.venues.accept(response.response?.venues ?? [])
+
+            if (response.response?.venues?.isEmpty ?? true) {
+                self.errorState.accept(.shown(#imageLiteral(resourceName: "alert"), "No data found !!"))
+            }
         }) { (error) in
             print("failure")
+            self.loaderSate.accept(.hidden)
+            self.errorState.accept(.shown(#imageLiteral(resourceName: "error"), "Something went wrong !!"))
         }
     }
 }
