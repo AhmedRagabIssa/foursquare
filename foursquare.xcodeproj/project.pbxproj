@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194CBD4A24E84857002D7C42 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */; };
+		194CBD4B24E84857002D7C42 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */; };
 		19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911A24E7F090001BED27 /* AppDelegate.swift */; };
 		19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */; };
 		19BE912224E7F090001BED27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912024E7F090001BED27 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		19BE911724E7F090001BED27 /* foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BE911A24E7F090001BED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194CBD4724E8482F002D7C42 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */,
+				194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		19BE910E24E7F090001BED27 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 		19BE913524E81821001BED27 /* Nearby Places */ = {
 			isa = PBXGroup;
 			children = (
+				194CBD4724E8482F002D7C42 /* Cell */,
 				19BE912024E7F090001BED27 /* Main.storyboard */,
 				19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */,
 				19BE913624E818DC001BED27 /* NearByPlacesViewModel.swift */,
@@ -209,6 +223,7 @@
 				19BE912724E7F091001BED27 /* LaunchScreen.storyboard in Resources */,
 				19BE912424E7F091001BED27 /* Assets.xcassets in Resources */,
 				19BE912224E7F090001BED27 /* Main.storyboard in Resources */,
+				194CBD4B24E84857002D7C42 /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +278,7 @@
 			files = (
 				19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */,
 				19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */,
+				194CBD4A24E84857002D7C42 /* PlaceTableViewCell.swift in Sources */,
 				19BE913024E7FC5E001BED27 /* APIClient.swift in Sources */,
 				19BE913724E818DC001BED27 /* NearByPlacesViewModel.swift in Sources */,
 				19BE913424E804F7001BED27 /* DataProviderProtocol.swift in Sources */,

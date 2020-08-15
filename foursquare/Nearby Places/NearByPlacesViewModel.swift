@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class NearByPlacesViewModel {
 
-    var venues: [Venue] = []
+    var venues: BehaviorRelay<[Venue]> = BehaviorRelay(value: [])
 
     func getNearByPlaces() {
         let placesRequest = SimpleGetRequest(url        : APIs.forsquarePlaces.rawValue,
@@ -21,7 +23,7 @@ class NearByPlacesViewModel {
 
         APIClient().getData(request: placesRequest, mapResponseOnType: FoursquareResponse.self, successHandler: { (response) in
             print("sucess")
-            self.venues = response.response?.venues ?? []
+            self.venues.accept(response.response?.venues ?? [])
         }) { (error) in
             print("failure")
         }

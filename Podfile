@@ -8,4 +8,8 @@ target 'foursquare' do
   # Network
   pod 'Alamofire', '~> 4.4'
 
+  # Reactive
+  pod 'RxSwift', '5.0.0'
+  pod 'RxCocoa', '5.0.0'
+
 end
