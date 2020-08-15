@@ -12,4 +12,7 @@ target 'foursquare' do
   pod 'RxSwift', '5.0.0'
   pod 'RxCocoa', '5.0.0'
 
+  # Loader
+  pod 'NVActivityIndicatorView', '~> 4.4.0'
+
 end
