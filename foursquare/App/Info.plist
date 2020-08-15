@@ -43,5 +43,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>$(PRODUCT_NAME) App needs your location to get the places near to you.</string>
 </dict>
 </plist>

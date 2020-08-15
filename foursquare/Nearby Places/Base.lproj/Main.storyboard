@@ -30,8 +30,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4zF-01-c5S"/>
+                    <navigationItem key="navigationItem" id="4zF-01-c5S">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="pmr-Wi-H0t">
+                            <connections>
+                                <action selector="didPressChangeLocationUpdateMode:" destination="BYZ-38-t0r" id="Eni-V9-dix"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="locationUpdateModeButton" destination="pmr-Wi-H0t" id="Ijv-1u-ryf"/>
                         <outlet property="tableView" destination="dkZ-cg-idA" id="M0o-q2-wS4"/>
                     </connections>
                 </viewController>

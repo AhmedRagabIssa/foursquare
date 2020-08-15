@@ -11,6 +11,7 @@ import RxSwift
 
 class NearByPlacesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var locationUpdateModeButton: UIBarButtonItem!
 
     private let loader = LoaderView()
     private var errorView: ErrorView?
@@ -24,9 +25,13 @@ class NearByPlacesViewController: UIViewController {
         tableView.tableFooterView = UIView()
         bindLoaderState()
         registerNib()
-        viewModel.getNearByPlaces()
         bindTableView()
         bindErrorState()
+        bindLocationUpdateMode()
+    }
+
+    @IBAction func didPressChangeLocationUpdateMode(_ sender: Any) {
+        viewModel.toggleLocationUpdateMode()
     }
 }
 
@@ -93,6 +98,16 @@ extension NearByPlacesViewController {
             case .hidden: self.hideErrorView()
             case let .shown(image, message): self.showErrorView(with: image, message: message)
             }
+            }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Location Update Mode button
+extension NearByPlacesViewController {
+    func bindLocationUpdateMode() {
+        viewModel.locationUpdateMode.asObservable().subscribe(onNext: {
+            [unowned self] mode in
+            self.locationUpdateModeButton.title = mode == .realtime ? "Realtime" : "Single"
             }).disposed(by: disposeBag)
     }
 }

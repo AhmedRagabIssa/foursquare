@@ -17,3 +17,7 @@ enum FoursquareCredentials: String {
     case clientSecret = "ZEEOAAZR0PL5K2UJPNRUA0W2PVOBSPRYE1MOK3GPMZJALTUN"
     case version = "20200815"
 }
+
+enum UserDefaultsKeys: String {
+    case isLocationUpdateModeRealtime
+}

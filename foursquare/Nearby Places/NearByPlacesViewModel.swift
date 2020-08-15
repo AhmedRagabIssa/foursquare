@@ -14,11 +14,26 @@ class NearByPlacesViewModel {
 
     private(set) var loaderSate: BehaviorRelay<LoaderState> = BehaviorRelay(value: .shown)
     private(set) var errorState: BehaviorRelay<ErrorState> = BehaviorRelay(value: .hidden)
+    private(set) var locationUpdateMode: BehaviorRelay<LocationUpdateMode>
+
+    private let disposeBag = DisposeBag()
+    private var locationManager = LocationManager()
+    private var userLocation: LocationManager.Location?
+    private var didReciveLocationUpdate: ((LocationManager.Location?, LocationError?) -> Void)?
+
     var venues: BehaviorRelay<[Venue]> = BehaviorRelay(value: [])
 
-    func getNearByPlaces() {
+    init() {
+        locationUpdateMode = BehaviorRelay(value: LocationUpdateMode.getLastLocationUpdateMode())
+        observeOnLocarionUpdateMode()
+        initDidReciveLocationUpdate()
+        locationManager.didReciveLocationUpdate = didReciveLocationUpdate
+        locationManager.startUpdatingLocation()
+    }
+
+    func getNearByPlaces(for location: LocationManager.Location) {
         let placesRequest = SimpleGetRequest(url        : APIs.forsquarePlaces.rawValue,
-                                             parameters : ["ll"            : "40.7,-74", // TODO: - change the static location to be dynamic
+                                             parameters : ["ll"            : "\(location.latitude),\(location.longitude)",
                                                            "client_id"     : FoursquareCredentials.clientId.rawValue,
                                                            "client_secret" : FoursquareCredentials.clientSecret.rawValue,
                                                            "v"             : FoursquareCredentials.version.rawValue])
@@ -36,5 +51,54 @@ class NearByPlacesViewModel {
             self.loaderSate.accept(.hidden)
             self.errorState.accept(.shown(#imageLiteral(resourceName: "error"), "Something went wrong !!"))
         }
+    }
+
+    private func initDidReciveLocationUpdate() {
+        didReciveLocationUpdate = { [weak self] location, error in
+            self?.userLocation = location
+            print("location: \(location?.latitude ?? 0), \(location?.longitude ?? 0). error: \(error?.category ?? "")")
+            // handle the location errors
+            if let error = error {
+                self?.loaderSate.accept(.hidden)
+                self?.errorState.accept(.shown(#imageLiteral(resourceName: "error"), error.reason))
+                return
+            }
+            self?.errorState.accept(.hidden)
+            if let location = location {
+                self?.getNearByPlaces(for: location)
+            } else {
+                self?.loaderSate.accept(.hidden)
+                self?.errorState.accept(.shown(#imageLiteral(resourceName: "error"), "Something went wrong while getting your location !!"))
+            }
+        }
+    }
+
+    private func observeOnLocarionUpdateMode() {
+        locationUpdateMode.asObservable().subscribe(onNext: { [unowned self] mode in
+            UserDefaults.standard.setValue(mode == .realtime, forKey: UserDefaultsKeys.isLocationUpdateModeRealtime.rawValue)
+            switch mode {
+            case .single: self.locationManager.stopMonitoringSignificantLocationChanges()
+            case .realtime: self.locationManager.startMonitoringSignificantLocationChanges()
+            }
+        }).disposed(by: disposeBag)
+    }
+
+    func toggleLocationUpdateMode() {
+        if locationUpdateMode.value == .realtime {
+            locationUpdateMode.accept(.single)
+        } else {
+            locationUpdateMode.accept(.realtime)
+        }
+    }
+}
+
+enum LocationUpdateMode {
+    case single
+    case realtime
+
+    static func getLastLocationUpdateMode() -> LocationUpdateMode {
+        let isRealtime: Bool = UserDefaults.standard.value(forKey: UserDefaultsKeys.isLocationUpdateModeRealtime.rawValue) as? Bool ?? true
+        
+        return isRealtime ? .realtime : .single // TODO: - get this from the cache
     }
 }
