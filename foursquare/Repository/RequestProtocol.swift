@@ -23,9 +23,12 @@ extension RequestProtocol {
 }
 
 class SimpleGetRequest: RequestProtocol {
+    
     var url: String
+    var parameters: Parameters
 
-    required init(url: String) {
+    required init(url: String, parameters: Parameters) {
         self.url = url
+        self.parameters = parameters
     }
 }

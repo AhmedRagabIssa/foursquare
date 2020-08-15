@@ -8,20 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911A24E7F090001BED27 /* AppDelegate.swift */; };
-		19BE911F24E7F090001BED27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911E24E7F090001BED27 /* ViewController.swift */; };
+		19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */; };
 		19BE912224E7F090001BED27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912024E7F090001BED27 /* Main.storyboard */; };
 		19BE912424E7F091001BED27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912324E7F091001BED27 /* Assets.xcassets */; };
 		19BE912724E7F091001BED27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912524E7F091001BED27 /* LaunchScreen.storyboard */; };
 		19BE913024E7FC5E001BED27 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE912F24E7FC5E001BED27 /* APIClient.swift */; };
 		19BE913224E80471001BED27 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE913124E80471001BED27 /* RequestProtocol.swift */; };
 		19BE913424E804F7001BED27 /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE913324E804F7001BED27 /* DataProviderProtocol.swift */; };
+		19BE913724E818DC001BED27 /* NearByPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE913624E818DC001BED27 /* NearByPlacesViewModel.swift */; };
+		19BE913B24E819D9001BED27 /* FoursquareResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE913A24E819D9001BED27 /* FoursquareResponse.swift */; };
+		19BE913F24E81C46001BED27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE913E24E81C46001BED27 /* Constants.swift */; };
 		E07C9C41BDB0EDA41354ECA6 /* Pods_foursquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788ABD7B6FDA791AD62E0673 /* Pods_foursquare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19BE911724E7F090001BED27 /* foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BE911A24E7F090001BED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19BE911E24E7F090001BED27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesViewController.swift; sourceTree = "<group>"; };
 		19BE912124E7F090001BED27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19BE912324E7F091001BED27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19BE912624E7F091001BED27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,6 +32,9 @@
 		19BE912F24E7FC5E001BED27 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		19BE913124E80471001BED27 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		19BE913324E804F7001BED27 /* DataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
+		19BE913624E818DC001BED27 /* NearByPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesViewModel.swift; sourceTree = "<group>"; };
+		19BE913A24E819D9001BED27 /* FoursquareResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoursquareResponse.swift; sourceTree = "<group>"; };
+		19BE913E24E81C46001BED27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		788ABD7B6FDA791AD62E0673 /* Pods_foursquare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foursquare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		815B0C29BA4E00759B8D8F5D /* Pods-foursquare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foursquare.release.xcconfig"; path = "Target Support Files/Pods-foursquare/Pods-foursquare.release.xcconfig"; sourceTree = "<group>"; };
 		E7C7C5A18A5847D90EA3888A /* Pods-foursquare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foursquare.debug.xcconfig"; path = "Target Support Files/Pods-foursquare/Pods-foursquare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,13 +73,11 @@
 		19BE911924E7F090001BED27 /* foursquare */ = {
 			isa = PBXGroup;
 			children = (
+				19BE913524E81821001BED27 /* Nearby Places */,
+				19BE913924E819C1001BED27 /* Entities */,
 				19BE912E24E7FC39001BED27 /* Repository */,
-				19BE911A24E7F090001BED27 /* AppDelegate.swift */,
-				19BE911E24E7F090001BED27 /* ViewController.swift */,
-				19BE912024E7F090001BED27 /* Main.storyboard */,
-				19BE912324E7F091001BED27 /* Assets.xcassets */,
-				19BE912524E7F091001BED27 /* LaunchScreen.storyboard */,
-				19BE912824E7F091001BED27 /* Info.plist */,
+				19BE913D24E81C2E001BED27 /* Resources */,
+				19BE913C24E81C02001BED27 /* App */,
 			);
 			path = foursquare;
 			sourceTree = "<group>";
@@ -86,6 +90,43 @@
 				19BE912F24E7FC5E001BED27 /* APIClient.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		19BE913524E81821001BED27 /* Nearby Places */ = {
+			isa = PBXGroup;
+			children = (
+				19BE912024E7F090001BED27 /* Main.storyboard */,
+				19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */,
+				19BE913624E818DC001BED27 /* NearByPlacesViewModel.swift */,
+			);
+			path = "Nearby Places";
+			sourceTree = "<group>";
+		};
+		19BE913924E819C1001BED27 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				19BE913A24E819D9001BED27 /* FoursquareResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		19BE913C24E81C02001BED27 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				19BE911A24E7F090001BED27 /* AppDelegate.swift */,
+				19BE912524E7F091001BED27 /* LaunchScreen.storyboard */,
+				19BE912824E7F091001BED27 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		19BE913D24E81C2E001BED27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19BE912324E7F091001BED27 /* Assets.xcassets */,
+				19BE913E24E81C46001BED27 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		457CA235490696A0B9DA35BB /* Pods */ = {
@@ -220,11 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19BE911F24E7F090001BED27 /* ViewController.swift in Sources */,
+				19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */,
 				19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */,
 				19BE913024E7FC5E001BED27 /* APIClient.swift in Sources */,
+				19BE913724E818DC001BED27 /* NearByPlacesViewModel.swift in Sources */,
 				19BE913424E804F7001BED27 /* DataProviderProtocol.swift in Sources */,
+				19BE913B24E819D9001BED27 /* FoursquareResponse.swift in Sources */,
 				19BE913224E80471001BED27 /* RequestProtocol.swift in Sources */,
+				19BE913F24E81C46001BED27 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XNBQR47BQU;
-				INFOPLIST_FILE = foursquare/Info.plist;
+				INFOPLIST_FILE = foursquare/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XNBQR47BQU;
-				INFOPLIST_FILE = foursquare/Info.plist;
+				INFOPLIST_FILE = foursquare/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
