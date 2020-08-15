@@ -12,9 +12,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        APIClient().getData(request: SimpleGetRequest(url: "https://jsonplaceholder.typicode.com/todos/1"), mapResponseOnType: Todo.self, successHandler: { (response) in
+            print("sucess")
+        }) { (error) in
+            print("failure")
+        }
     }
 
 
 }
 
+struct Todo: Codable {
+    var userId: Int?
+    var id: Int?
+    var title: String?
+    var completed: Bool?
+}
