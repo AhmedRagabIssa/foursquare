@@ -42,8 +42,8 @@ extension NearByPlacesViewController {
     }
 
     private func bindTableView() {
-        viewModel.venues.bind(to: tableView.rx.items(cellIdentifier: PlaceTableViewCell.nibName, cellType: PlaceTableViewCell.self)) { _, model, cell in
-            cell.configure(with: model)
+        viewModel.venuesCellsViewModels.bind(to: tableView.rx.items(cellIdentifier: PlaceTableViewCell.nibName, cellType: PlaceTableViewCell.self)) { _, cellViewModel, cell in
+            cell.configure(with: cellViewModel)
         }.disposed(by: disposeBag)
     }
 }

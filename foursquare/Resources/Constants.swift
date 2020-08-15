@@ -10,6 +10,7 @@ import Foundation
 
 enum APIs: String {
     case forsquarePlaces = "https://api.foursquare.com/v2/venues/search"
+    case forsquareVenueImage = "https://api.foursquare.com/v2/venues/"
 }
 
 enum FoursquareCredentials: String {

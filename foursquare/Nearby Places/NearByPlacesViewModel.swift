@@ -21,7 +21,7 @@ class NearByPlacesViewModel {
     private var userLocation: LocationManager.Location?
     private var didReciveLocationUpdate: ((LocationManager.Location?, LocationError?) -> Void)?
 
-    var venues: BehaviorRelay<[Venue]> = BehaviorRelay(value: [])
+    var venuesCellsViewModels: BehaviorRelay<[PlaceCellViewModel]> = BehaviorRelay(value: [])
 
     init() {
         locationUpdateMode = BehaviorRelay(value: LocationUpdateMode.getLastLocationUpdateMode())
@@ -41,7 +41,11 @@ class NearByPlacesViewModel {
         APIClient().getData(request: placesRequest, mapResponseOnType: FoursquareResponse.self, successHandler: { (response) in
             print("sucess")
             self.loaderSate.accept(.hidden)
-            self.venues.accept(response.response?.venues ?? [])
+            var venuesViewModels: [PlaceCellViewModel] = []
+            response.response?.venues?.forEach({ venue in
+                venuesViewModels.append(PlaceCellViewModel(venue: venue))
+            })
+            self.venuesCellsViewModels.accept(venuesViewModels)
 
             if (response.response?.venues?.isEmpty ?? true) {
                 self.errorState.accept(.shown(#imageLiteral(resourceName: "alert"), "No data found !!"))
@@ -98,7 +102,6 @@ enum LocationUpdateMode {
 
     static func getLastLocationUpdateMode() -> LocationUpdateMode {
         let isRealtime: Bool = UserDefaults.standard.value(forKey: UserDefaultsKeys.isLocationUpdateModeRealtime.rawValue) as? Bool ?? true
-        
-        return isRealtime ? .realtime : .single // TODO: - get this from the cache
+        return isRealtime ? .realtime : .single
     }
 }

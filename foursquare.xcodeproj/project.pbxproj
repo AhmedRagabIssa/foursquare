@@ -12,6 +12,8 @@
 		194CBD4E24E8512A002D7C42 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD4D24E8512A002D7C42 /* LoaderView.swift */; };
 		194CBD5124E85BD6002D7C42 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD5024E85BD6002D7C42 /* ErrorView.swift */; };
 		194CBD5324E877C6002D7C42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD5224E877C6002D7C42 /* LocationManager.swift */; };
+		194CBD5524E8993C002D7C42 /* PlaceImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD5424E8993C002D7C42 /* PlaceImageResponse.swift */; };
+		194CBD5724E89ACC002D7C42 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBD5624E89ACC002D7C42 /* PlaceCellViewModel.swift */; };
 		19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911A24E7F090001BED27 /* AppDelegate.swift */; };
 		19BE911F24E7F090001BED27 /* NearByPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */; };
 		19BE912224E7F090001BED27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BE912024E7F090001BED27 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		194CBD4D24E8512A002D7C42 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		194CBD5024E85BD6002D7C42 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		194CBD5224E877C6002D7C42 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		194CBD5424E8993C002D7C42 /* PlaceImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageResponse.swift; sourceTree = "<group>"; };
+		194CBD5624E89ACC002D7C42 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		19BE911724E7F090001BED27 /* foursquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foursquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BE911A24E7F090001BED27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19BE911E24E7F090001BED27 /* NearByPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByPlacesViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			children = (
 				194CBD4824E84857002D7C42 /* PlaceTableViewCell.swift */,
 				194CBD4924E84857002D7C42 /* PlaceTableViewCell.xib */,
+				194CBD5624E89ACC002D7C42 /* PlaceCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				19BE913A24E819D9001BED27 /* FoursquareResponse.swift */,
+				194CBD5424E8993C002D7C42 /* PlaceImageResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				19BE911B24E7F090001BED27 /* AppDelegate.swift in Sources */,
 				194CBD4A24E84857002D7C42 /* PlaceTableViewCell.swift in Sources */,
 				19BE913024E7FC5E001BED27 /* APIClient.swift in Sources */,
+				194CBD5724E89ACC002D7C42 /* PlaceCellViewModel.swift in Sources */,
 				19BE913724E818DC001BED27 /* NearByPlacesViewModel.swift in Sources */,
 				19BE913424E804F7001BED27 /* DataProviderProtocol.swift in Sources */,
 				19BE913B24E819D9001BED27 /* FoursquareResponse.swift in Sources */,
@@ -313,6 +320,7 @@
 				19BE913224E80471001BED27 /* RequestProtocol.swift in Sources */,
 				19BE913F24E81C46001BED27 /* Constants.swift in Sources */,
 				194CBD5124E85BD6002D7C42 /* ErrorView.swift in Sources */,
+				194CBD5524E8993C002D7C42 /* PlaceImageResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
