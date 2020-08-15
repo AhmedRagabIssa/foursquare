@@ -15,4 +15,7 @@ target 'foursquare' do
   # Loader
   pod 'NVActivityIndicatorView', '~> 4.4.0'
 
+  # Images
+  pod 'Kingfisher', '~> 4.10.1'
+
 end

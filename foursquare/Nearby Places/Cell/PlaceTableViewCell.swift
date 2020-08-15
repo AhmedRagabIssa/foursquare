@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class PlaceTableViewCell: UITableViewCell {
 
@@ -37,6 +38,10 @@ class PlaceTableViewCell: UITableViewCell {
     private func bindObservers() {
         viewModel?.name.bind(to: self.placeNameLabel.rx.text).disposed(by: disposeBag!)
         viewModel?.address.bind(to: self.placeAddressLabel.rx.text).disposed(by: disposeBag!)
-        // TODO: - display the place image
+        viewModel?.imageUrl.asObservable().subscribe(onNext: {
+            [unowned self] url in
+            self.placeImageView.kf.indicatorType = .activity
+            self.placeImageView.kf.setImage(with: URL(string: url ?? ""), placeholder: #imageLiteral(resourceName: "imagePlaceHolder"), options: [.cacheOriginalImage])
+            }).disposed(by: disposeBag!)
     }
 }

@@ -14,6 +14,7 @@ enum APIs: String {
 }
 
 enum FoursquareCredentials: String {
+    // TODO: you need to chaneg the clientId & clientSecret as this account is not paied and consumed the free qouta
     case clientId = "2Z1QZ3SDQKCUU1K3QF4C222QBB0XHTTCNUBPKIDDZOQ3MC31"
     case clientSecret = "ZEEOAAZR0PL5K2UJPNRUA0W2PVOBSPRYE1MOK3GPMZJALTUN"
     case version = "20200815"
