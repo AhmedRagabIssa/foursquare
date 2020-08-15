@@ -39,7 +39,6 @@ class NearByPlacesViewModel {
                                                            "v"             : FoursquareCredentials.version.rawValue])
 
         APIClient().getData(request: placesRequest, mapResponseOnType: FoursquareResponse.self, successHandler: { (response) in
-            print("sucess")
             self.loaderSate.accept(.hidden)
             var venuesViewModels: [PlaceCellViewModel] = []
             response.response?.venues?.forEach({ venue in
@@ -51,7 +50,6 @@ class NearByPlacesViewModel {
                 self.errorState.accept(.shown(#imageLiteral(resourceName: "alert"), "No data found !!"))
             }
         }) { (error) in
-            print("failure")
             self.loaderSate.accept(.hidden)
             self.errorState.accept(.shown(#imageLiteral(resourceName: "error"), "Something went wrong !!"))
         }
@@ -60,7 +58,6 @@ class NearByPlacesViewModel {
     private func initDidReciveLocationUpdate() {
         didReciveLocationUpdate = { [weak self] location, error in
             self?.userLocation = location
-            print("location: \(location?.latitude ?? 0), \(location?.longitude ?? 0). error: \(error?.category ?? "")")
             // handle the location errors
             if let error = error {
                 self?.loaderSate.accept(.hidden)
